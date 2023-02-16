@@ -11,9 +11,8 @@ public class Main {
     }
 
     static void printData(ParkingPlace[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = new ParkingPlace(i + 1);
-            System.out.println(arr[i].toString());
+        for (ParkingPlace parkingPlace : arr) {
+            System.out.println(parkingPlace.toString());
         }
     }
 
