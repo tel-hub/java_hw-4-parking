@@ -10,6 +10,13 @@ public class Main {
         return m.find();
     }
 
+    static void printData(ParkingPlace[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new ParkingPlace(i + 1);
+            System.out.println(arr[i].toString());
+        }
+    }
+
     public static void main(String[] args) {
         Scanner KB = new Scanner(System.in);
         System.out.print("Integer count >");
@@ -25,14 +32,13 @@ public class Main {
         if (COUNT > 0) {
             System.out.println("### Total count " + COUNT + " ###");
 
-            ParkingPlace[] allParkingPlaces;
-
-            allParkingPlaces = new ParkingPlace[COUNT];
+            ParkingPlace[] allParkingPlaces = new ParkingPlace[COUNT];
 
             for (int i = 0; i < COUNT; i++) {
                 allParkingPlaces[i] = new ParkingPlace(i + 1);
-                System.out.println(allParkingPlaces[i].toString());
             }
+
+            printData(allParkingPlaces);
 
             allParkingPlaces[COUNT / 2].isOccupied = "занято";
 
@@ -42,9 +48,8 @@ public class Main {
 
             System.out.println("### AFTER UPDATE ###");
 
-            for (int i = 0; i < COUNT; i++) {
-                System.out.println(allParkingPlaces[i].toString());
-            }
+            printData(allParkingPlaces);
+
         } else {
             System.out.println("NO DATA");
         }
